@@ -26,7 +26,11 @@ function newNonPlayableCharacter(x, y) {
     function walkEast() {
         direction = 'east'
         element.src = `./assets/red-character/east.gif`
+        setTimeout(() =>{
+            npc.walkEast.stop()
+        }, 500)
     }
+        
 
     function walkNorth() {
         direction = 'north'
