@@ -22,14 +22,16 @@ function newNonPlayableCharacter(x, y) {
     }
 
     setInterval(moveCharacter, 1)
-
     function walkEast() {
         direction = 'east'
         element.src = `./assets/red-character/east.gif`
+        let intervalId = setInterval(moveCharacter, 1)
         setTimeout(() =>{
-            npc.walkEast.stop()
-        }, 500)
+            clearInterval(intervalId)
+            stop()
+        }, 1000)
     }
+    
         
 
     function walkNorth() {
